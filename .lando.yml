@@ -1,11 +1,24 @@
 name: marketing-site
 recipe: wordpress
 config:
+  php: '8.4'
+  via: nginx
   webroot: web
-  php: '8.3'
-  composer_version: '2.7.6'
+  database: mysql:8.0
+  xdebug: false
+
 services:
+  appserver:
+    config:
+      appserver: .lando.nginx.conf
+  database:
+    portforward: 3307
   node:
     type: node:20
+  mailpit:
+    type: mailpit
+    mailFrom:
+      - appserver
+
 env_file:
   - .env
