@@ -19,6 +19,13 @@ services:
     type: mailpit
     mailFrom:
       - appserver
+    portforward: true
 
 env_file:
   - .env
+
+proxy:
+  appserver_nginx:
+    - marketing-site.lndo.site
+    - be.marketing-site.lndo.site
+    - nl.marketing-site.lndo.site
