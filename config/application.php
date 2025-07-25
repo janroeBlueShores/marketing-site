@@ -70,8 +70,8 @@ if (!env('WP_ENVIRONMENT_TYPE') && in_array(WP_ENV, ['production', 'staging', 'd
 /**
  * URLs
  */
-Config::define('WP_HOME', env('WP_HOME'));
-Config::define('WP_SITEURL', env('WP_SITEURL'));
+Config::define( 'WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
+Config::define( 'WP_SITEURL', 'https://' . $_SERVER['HTTP_HOST']);
 
 /**
  * Custom Content Directory
@@ -141,6 +141,16 @@ Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('WP_DEBUG_LOG', false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
+
+
+Config::define('WP_ALLOW_MULTISITE', true);
+Config::define( 'WP_ALLOW_MULTISITE', true );
+Config::define( 'MULTISITE', true );
+Config::define( 'SUBDOMAIN_INSTALL', true );
+Config::define( 'DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST']);
+Config::define( 'PATH_CURRENT_SITE', '/' );
+Config::define( 'SITE_ID_CURRENT_SITE', 1 );
+Config::define( 'BLOG_ID_CURRENT_SITE', 1 );
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer

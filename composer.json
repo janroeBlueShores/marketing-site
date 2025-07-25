@@ -40,7 +40,8 @@
     "roots/wordpress": "6.8.1",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
-    "roots/acorn": "^5.0"
+    "roots/acorn": "^5.0",
+    "roots/multisite-url-fixer": "^1.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
